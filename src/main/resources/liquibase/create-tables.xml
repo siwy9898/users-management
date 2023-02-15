@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="kuba" id="20230215_kuba_001">
+        <sql>
+            create sequence teacher_id_sequence start with 100 increment by 200;
+            create sequence student_id_sequence start with 100 increment by 200;
+            create table teacher (id integer not null, email varchar(255), name varchar(255), surname varchar(255), primary key (id));
+            create table student (id integer not null, email varchar(255), name varchar(255), surname varchar(255), primary key (id));
+        </sql>
+        <rollback>
+            <dropView viewName="teacher_view"/>
+            <dropTable tableName="teacher"/>
+            <dropTable tableName="student"/>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>
