@@ -2,12 +2,10 @@ package pl.kurs.java.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import pl.kurs.java.model.Teacher;
 import pl.kurs.java.model.command.CreateTeacherCommand;
+import pl.kurs.java.model.command.EditTeacherCommand;
 import pl.kurs.java.repository.TeacherRepository;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -19,13 +17,13 @@ public class TeacherService {
         return teacherRepository.save(new Teacher(command.getName(), command.getSurname(), command.getEmail()));
     }
 
-    @Transactional
-    public void save(List<CreateTeacherCommand> commands) {
-        commands.forEach(this::save);
-
+    public Teacher edit(EditTeacherCommand command) {
+        Teacher toEdit = teacherRepository.findById(command.getId()).orElseThrow();
+        toEdit.setName(command.getName());
+        toEdit.setSurname(command.getSurname());
+        toEdit.setEmail(command.getEmail());
+        return teacherRepository.saveAndFlush(toEdit);
     }
-
-
 
 
 }

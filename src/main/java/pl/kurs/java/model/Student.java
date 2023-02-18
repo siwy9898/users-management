@@ -15,11 +15,11 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "studentIdGenerator")
-    @SequenceGenerator(name = "teacherIdGenerator", allocationSize = 200, initialValue = 100, sequenceName = "student_id_sequence")
+    @SequenceGenerator(name = "studentIdGenerator", allocationSize = 200, initialValue = 100, sequenceName = "student_id_sequence")
     private int id;
 
-    private String name;
-    private String surname;
+    String name;
+    String surname;
     private String email;
 
     @Version
@@ -32,5 +32,13 @@ public class Student {
         this.surname = surname;
         this.email = email;
     }
+
+    public Student(Student student) {
+        this.name = getName();
+        this.surname = getSurname();
+        this.email = getEmail();
+
+    }
+
 
 }

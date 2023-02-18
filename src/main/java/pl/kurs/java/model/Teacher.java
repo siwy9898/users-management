@@ -5,8 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -20,9 +18,8 @@ public class Teacher {
     @SequenceGenerator(name = "teacherIdGenerator", allocationSize = 200, initialValue = 100, sequenceName = "teacher_id_sequence")
     private int id;
 
-    private String name;
-    private String surname;
-    @Column(unique = true)
+    String name;
+    String surname;
     private String email;
 
     @Version
@@ -30,12 +27,16 @@ public class Teacher {
 
     private boolean deleted;
 
-    public Teacher (String name, String surname, String email) {
+
+    public Teacher(String name, String surname, String email) {
         this.name = name;
         this.surname = surname;
         this.email = email;
     }
 
-
-
+    public Teacher(Teacher teacher) {
+        this.name = getName();
+        this.surname = getSurname();
+        this.email = getEmail();
+    }
 }
