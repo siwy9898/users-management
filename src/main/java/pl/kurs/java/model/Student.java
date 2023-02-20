@@ -22,10 +22,8 @@ public class Student {
     String surname;
     private String email;
 
-    @Version
-    private long version;
 
-    private boolean deleted;
+    private boolean deleted = Boolean.FALSE;
 
     public Student(String name, String surname, String email) {
         this.name = name;

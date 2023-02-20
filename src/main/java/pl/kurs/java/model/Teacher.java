@@ -22,10 +22,10 @@ public class Teacher {
     String surname;
     private String email;
 
-    @Version
-    private long version;
-
-    private boolean deleted;
+//    @Version
+//    private long version;
+//
+//    private boolean deleted;
 
 
     public Teacher(String name, String surname, String email) {

@@ -6,7 +6,18 @@
 
     <groupId>pl.kurs.java</groupId>
     <artifactId>teacher-management</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <feign.okhttp.version>12.1</feign.okhttp.version>
+        <feign.httpclient.version>12.1</feign.httpclient.version>
+        <commons.model.version>1.0-SNAPSHOT</commons.model.version>
+        <spring.open.feign.starter.version>3.1.2</spring.open.feign.starter.version>
+        <spring.cloud.version>2021.0.5</spring.cloud.version>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,11 +26,6 @@
         <relativePath/>
     </parent>
 
-    <properties>
-        <java.version>17</java.version>
-        <springfox.version>3.0.0</springfox.version>
-        <querydsl.version>5.0.0</querydsl.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -33,11 +39,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

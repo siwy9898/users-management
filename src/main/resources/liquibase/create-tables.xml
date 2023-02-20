@@ -7,7 +7,7 @@
         <sql>
             create sequence teacher_id_sequence start with 100 increment by 200;
             create sequence student_id_sequence start with 100 increment by 200;
-            create table teacher (id integer not null, email varchar(255), name varchar(255), surname varchar(255), primary key (id));
+            create table teacher (id integer not null, deleted bit, email varchar(255), name varchar(255), surname varchar(255), primary key (id));
             create table student (id integer not null, email varchar(255), name varchar(255), surname varchar(255), primary key (id));
         </sql>
         <rollback>
