@@ -24,6 +24,7 @@ public class Student {
 
     private String name;
     private String surname;
+    @Column (unique = true)
     private String email;
 
     private boolean deleted;

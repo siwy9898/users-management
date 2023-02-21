@@ -8,6 +8,7 @@ import org.springframework.hateoas.RepresentationModel;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 
 public class TeacherDto extends RepresentationModel<TeacherDto> {
 
@@ -16,8 +17,6 @@ public class TeacherDto extends RepresentationModel<TeacherDto> {
     private String name;
     private String surname;
     private String email;
-
-    private Long version;
 
 
 }

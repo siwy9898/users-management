@@ -8,16 +8,14 @@ import org.springframework.hateoas.RepresentationModel;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
-public class StudentDto extends RepresentationModel <StudentDto> {
+@Builder
+public class StudentDto extends RepresentationModel<StudentDto> {
 
     private int id;
 
     private String name;
     private String surname;
     private String email;
-
-    private Long version;
 
 
 }

@@ -6,16 +6,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.kurs.java.model.Teacher;
 import pl.kurs.java.model.command.CreateTeacherCommand;
 import pl.kurs.java.model.command.EditTeacherCommand;
 import pl.kurs.java.model.dto.StudentDto;
 import pl.kurs.java.model.dto.TeacherDto;
 import pl.kurs.java.service.TeacherService;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/teachers")
@@ -42,5 +37,11 @@ public class TeacherController {
 
     }
 
+    @PutMapping("/delete/{id}")
+    public ResponseEntity<TeacherDto> deleteTeacher(@PathVariable Integer id, @RequestBody EditTeacherCommand command) {
+        log.info("deleteTeacher({})", command);
+        return ResponseEntity.status(HttpStatus.OK).body(modelMapper.map(teacherService.delete(id), TeacherDto.class));
+
+    }
 
 }

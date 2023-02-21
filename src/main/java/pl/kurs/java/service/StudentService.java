@@ -30,11 +30,11 @@ public class StudentService {
         return studentRepository.saveAndFlush(toEdit);
     }
 
-//    public Student delete(EditStudentCommand command) {
-//        Student toDelete = studentRepository.findById(command.getId()).orElseThrow();
-//        toDelete.setState(State.DELETED);
-//        return studentRepository.saveAndFlush(toDelete);
-//    }
+    public Student delete(Integer id) {
+        Student toDelete = studentRepository.findById(id).orElseThrow();
+        toDelete.setDeleted(true);
 
+        return studentRepository.saveAndFlush(toDelete);
+    }
 
 }
