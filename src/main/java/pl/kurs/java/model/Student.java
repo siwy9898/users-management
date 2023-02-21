@@ -13,13 +13,12 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@SQLDelete(sql = "update student set deleted = true where id = ?")
+@SQLDelete(sql = "update student set deleted = true where id = ?") // Sprawdzic czy bez controllera
 @Where(clause = "deleted=false")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "studentIdGenerator")
-    @Column(name = "id", updatable = false, nullable = false)
     @SequenceGenerator(name = "studentIdGenerator", allocationSize = 200, initialValue = 100, sequenceName = "student_id_sequence")
     private int id;
 

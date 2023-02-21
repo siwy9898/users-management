@@ -38,6 +38,8 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.OK).body(modelMapper.map(studentService.edit(command), StudentDto.class));
     }
 
+    //Delete student sprawdz z soft delete
+
 
 
 

@@ -7,7 +7,7 @@ import org.springframework.hateoas.RepresentationModel;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@ToString
 
 public class TeacherDto extends RepresentationModel<TeacherDto> {
 

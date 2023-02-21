@@ -19,13 +19,13 @@ public class Teacher {
     @SequenceGenerator(name = "teacherIdGenerator", allocationSize = 200, initialValue = 100, sequenceName = "teacher_id_sequence")
     private int id;
 
-    @Column
+
     String name;
 
-    @Column
+
     String surname;
 
-    @Column
+
     private String email;
 
     @Column
