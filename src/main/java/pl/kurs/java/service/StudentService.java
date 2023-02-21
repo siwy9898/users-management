@@ -26,8 +26,15 @@ public class StudentService {
         toEdit.setName(command.getName());
         toEdit.setSurname(command.getSurname());
         toEdit.setEmail(command.getEmail());
+
         return studentRepository.saveAndFlush(toEdit);
     }
+
+//    public Student delete(EditStudentCommand command) {
+//        Student toDelete = studentRepository.findById(command.getId()).orElseThrow();
+//        toDelete.setState(State.DELETED);
+//        return studentRepository.saveAndFlush(toDelete);
+//    }
 
 
 }

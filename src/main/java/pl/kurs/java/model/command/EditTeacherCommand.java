@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import pl.kurs.java.model.State;
 
 @Getter
 @Setter
@@ -12,8 +13,10 @@ import lombok.ToString;
 
 public class EditTeacherCommand {
 
-    private int id;
+    private Integer id;
     private String name;
     private String surname;
     private String email;
+
+
 }

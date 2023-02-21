@@ -14,18 +14,23 @@ import javax.persistence.*;
 public class Teacher {
 
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teacherIdGenerator")
     @SequenceGenerator(name = "teacherIdGenerator", allocationSize = 200, initialValue = 100, sequenceName = "teacher_id_sequence")
     private int id;
 
+    @Column
     String name;
+
+    @Column
     String surname;
+
+    @Column
     private String email;
 
-//    @Version
-//    private long version;
-//
-//    private boolean deleted;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private State state;
 
 
     public Teacher(String name, String surname, String email) {

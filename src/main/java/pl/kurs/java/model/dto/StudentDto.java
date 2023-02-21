@@ -21,5 +21,7 @@ public class StudentDto extends RepresentationModel <StudentDto> {
     private String surname;
     private String email;
 
+    private Long version;
+
 
 }

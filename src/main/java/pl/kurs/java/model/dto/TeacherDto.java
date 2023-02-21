@@ -17,5 +17,7 @@ public class TeacherDto extends RepresentationModel<TeacherDto> {
     private String surname;
     private String email;
 
+    private Long version;
+
 
 }
